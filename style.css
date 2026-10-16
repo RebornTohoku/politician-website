@@ -175,16 +175,23 @@ a { color: inherit; }
 .list a:hover { color: var(--accent); }
 
 /* ===== SNS ===== */
-.sns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
 .sns a {
   display: flex;
   justify-content: space-between;
-  padding: 14px 16px;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 14px 12px;
   border: 2px solid var(--text);
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
-  min-width: 0;
+  line-height: 1.5;
 }
 .sns a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 
