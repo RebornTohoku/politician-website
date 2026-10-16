@@ -1,1 +1,211 @@
 
+/* ===== 色と基本設定（ここを変えると全体が変わります） ===== */
+:root {
+  --accent: #e5007f;   /* アクセントカラー */
+  --text: #1a1a1a;     /* 文字の色 */
+  --sub: #666666;      /* 補足の文字色 */
+  --line: #dddddd;     /* 線の色 */
+  --bg: #ffffff;       /* 背景色 */
+  --gray: #f2f2f2;     /* 薄い灰色 */
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: inherit; }
+
+/* ===== ヘッダー ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 3px solid var(--accent);
+  padding: 12px 16px;
+}
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+
+/* ===== メインビジュアル ===== */
+.hero {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;    /* 写真がない間の灰色枠の形 */
+  background: var(--gray);
+  margin-bottom: 24px;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.kana {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: var(--sub);
+}
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+.title {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+}
+.title + .title { margin-top: 6px; }
+
+/* ===== 宮沢賢治の言葉 ===== */
+.quote {
+  background: var(--accent);
+  color: #fff;
+  padding: 56px 20px;
+  text-align: center;
+}
+.quote blockquote {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.9;
+}
+.quote-by {
+  margin: 16px 0 0;
+  font-size: 14px;
+}
+
+/* ===== 共通セクション（線は見出し上のピンクの帯だけ） ===== */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+.section h2 {
+  margin: 0 0 24px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+.section h2::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 6px;
+  margin-bottom: 14px;
+  background: var(--accent);
+}
+.note { font-size: 13px; color: var(--sub); }
+.more { font-size: 14px; color: var(--sub); }
+
+/* ===== プロフィールの名前 ===== */
+.profile-name {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+}
+.profile-name span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--sub);
+  margin-left: 0.5em;
+}
+
+/* ===== プロフィール・問い合わせ ===== */
+.profile {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 5.5em 1fr;
+  gap: 12px 8px;
+}
+.profile dt { font-weight: 700; color: var(--accent); }
+.profile dd { margin: 0; }
+
+/* ===== 基本政策 ===== */
+.policies {
+  display: grid;
+  gap: 12px;               /* 帯と帯の間隔 */
+}
+.policy {
+  background: var(--gray);
+  border-left: 6px solid var(--accent);
+  padding: 20px 20px;
+}
+.policy h3 { margin: 0 0 4px; font-size: 24px; line-height: 1.4; }
+.policy p { margin: 0; font-size: 14px; color: var(--sub); line-height: 1.7; }
+
+/* ===== お知らせ・活動報告の一覧 ===== */
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.list time { font-size: 14px; color: var(--sub); }
+.tag {
+  font-size: 12px;
+  color: #fff;
+  background: var(--accent);
+  padding: 0 8px;
+}
+.list a { flex-basis: 100%; text-decoration: none; font-weight: 700; }
+.list a:hover { color: var(--accent); }
+
+/* ===== SNS ===== */
+.sns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sns a {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 2px solid var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+.sns a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ===== フッター ===== */
+.footer {
+  background: var(--text);
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 13px;
+}
+.footer p { margin: 0; }
+
+/* ===== パソコン用（画面幅が800px以上） ===== */
+@media (min-width: 800px) {
+  .header { padding: 14px 32px; }
+  .hero { padding: 56px 32px; }
+  .hero h1 { font-size: 72px; }
+  .quote { padding: 80px 20px; }
+  .quote blockquote { font-size: 32px; }
+  .section { padding: 72px 32px; }  .themes  repeat(4, 1fr); }
+  .sns { grid-template-columns: repeat(4, 1fr); }
+  .list a { flex-basis: auto; }
+}
