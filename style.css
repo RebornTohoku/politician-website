@@ -212,7 +212,7 @@ a { color: inherit; }
   .hero h1 { font-size: 72px; }
   .quote { padding: 80px 20px; }
   .quote blockquote { font-size: 32px; }
-  .section { padding: 72px 32px; }  .themes  repeat(4, 1fr); }
+  .section { padding: 72px 32px; }
   .sns { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .list a { flex-basis: auto; }
 }
