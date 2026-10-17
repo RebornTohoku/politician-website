@@ -251,6 +251,29 @@ a { color: inherit; }
 }
 .sns a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 
+/* ===== フォトギャラリー ===== */
+.gallery {
+  columns: 2;              /* 横に並べる数（スマホ） */
+  column-gap: 12px;
+}
+.photo {
+  margin: 0 0 24px;
+  break-inside: avoid;     /* 写真と文章が別の列に分かれないように */
+}
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;            /* 縦横比はそのまま */
+  min-height: 120px;       /* 写真がない間も灰色の枠が見える */
+  background: var(--gray);
+}
+.photo figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--sub);
+}
+
 /* ===== フッター ===== */
 .footer {
   background: var(--text);
