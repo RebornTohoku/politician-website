@@ -253,4 +253,5 @@ a { color: inherit; }
   .section { padding: 72px 32px; }
   .sns { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .list a { flex-basis: auto; }
+  .pickups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
