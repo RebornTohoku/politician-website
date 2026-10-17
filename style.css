@@ -177,16 +177,18 @@ a { color: inherit; }
 /* ===== 国会質問・フォトギャラリー（目立つリンク） ===== */
 .pickups {
   display: grid;
-  gap: 12px;
+  gap: 16px;
 }
 .pickup {
   position: relative;
   display: block;
-  padding: 28px 56px 28px 24px;
-  background: var(--text);
-  color: #fff;
+  padding: 28px 64px 28px 24px;
+  background: #fff0f7;                 /* ごく薄いピンク */
+  color: var(--text);
   text-decoration: none;
-  border-left: 8px solid var(--accent);
+  border: 3px solid var(--accent);
+  box-shadow: 6px 6px 0 var(--accent); /* ずらした影で、押せる感じに */
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 .pickup-en {
   display: block;
@@ -205,12 +207,28 @@ a { color: inherit; }
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
   font-weight: 700;
 }
-.pickup:hover { background: var(--accent); }
-.pickup:hover .pickup-en { color: #fff; }
-
+/* タップ・マウスを乗せたとき：影の分だけ沈み、ピンクに反転 */
+.pickup:hover,
+.pickup:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.pickup:hover .pickup-en,
+.pickup:active .pickup-en { color: #fff; }
+.pickup:hover .pickup-arrow,
+.pickup:active .pickup-arrow { background: #fff; color: var(--accent); }
 
 /* ===== SNS ===== */
 .sns {
