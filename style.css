@@ -274,6 +274,43 @@ a { color: inherit; }
   color: var(--sub);
 }
 
+/* ===== 国会質問の一覧 ===== */
+.questions {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.questions li { border-bottom: 1px solid var(--line); }
+.questions a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 18px 40px 18px 0;
+  text-decoration: none;
+}
+.questions a::after {
+  content: "→";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.questions time {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.questions .q-place {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.questions a:hover .q-place { color: var(--accent); }
+
 /* ===== フッター ===== */
 .footer {
   background: var(--text);
