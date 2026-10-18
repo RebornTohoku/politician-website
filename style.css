@@ -188,10 +188,48 @@ a { color: inherit; }
 .policy {
   background: var(--gray);
   border-left: 6px solid var(--accent);
-  padding: 20px 20px;
+  padding: 20px;
 }
-.policy h3 { margin: 0 0 4px; font-size: 24px; line-height: 1.4; }
-.policy p { margin: 0; font-size: 15px; color: var(--text); line-height: 1.7; text-wrap: balance; }
+.policy h3 { margin: 0 0 6px; font-size: 24px; line-height: 1.4; }
+.policy-lead {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.7;
+  text-wrap: balance;      /* 行の長さをそろえる */
+}
+
+/* 「詳しく見る」の折りたたみ部分 */
+.policy details { margin-top: 12px; border-top: 1px solid var(--line); }
+.policy summary {
+  padding: 12px 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;        /* 標準の三角マークを消す */
+}
+.policy summary::-webkit-details-marker { display: none; }
+.policy summary::after { content: "＋"; margin-left: 0.5em; }
+.policy details[open] summary::after { content: "－"; }
+.policy details ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.policy details li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.policy details li:last-child { margin-bottom: 0; }
+.policy details li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+}
 
 /* ===== お知らせ・活動報告の一覧 ===== */
 .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
