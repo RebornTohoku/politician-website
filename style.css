@@ -410,7 +410,7 @@ a { color: inherit; }
   .sns { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .list a { flex-basis: auto; }
   .hero-photo {
-    max-width: 720px;      /* PCでの写真の最大の幅。小さくしたいときはこの数字を下げる */
+    max-width: 600px;      /* PCでの写真の最大の幅。小さくしたいときはこの数字を下げる */
     margin-left: auto;
     margin-right: auto;    /* 左右の空白を均等にして中央に置く */
     margin-bottom: 72px;   /* PCのときの余白 */
