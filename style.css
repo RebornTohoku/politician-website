@@ -51,7 +51,7 @@ a { color: inherit; }
   width: 100%;
   aspect-ratio: 16 / 9;    /* 写真がない間の灰色枠の形 */
   background: var(--gray);
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 .hero-photo img {
   display: block;
@@ -413,6 +413,7 @@ a { color: inherit; }
     max-width: 720px;      /* PCでの写真の最大の幅。小さくしたいときはこの数字を下げる */
     margin-left: auto;
     margin-right: auto;    /* 左右の空白を均等にして中央に置く */
+    margin-bottom: 72px;   /* PCのときの余白 */
     }
   .pickups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
