@@ -17,6 +17,7 @@
 
 <section class="section">
   <h2>フォトギャラリー</h2>
+  <p class="note">写真をタップすると、大きく表示されます。</p>
 
   <!-- ▼▼ 写真はこの中に並びます ▼▼ -->
   <div class="gallery">
@@ -82,5 +83,40 @@
   <p>© 2026 佐原若子</p>
 </footer>
 
+<!-- ===== 写真をタップで拡大する仕組み（さわらなくて大丈夫です） ===== -->
+<script>
+(function () {
+  var box = document.createElement('div');
+  box.className = 'lightbox';
+  box.innerHTML = '<img alt=""><p class="lightbox-caption"></p><button type="button" class="lightbox-close">× とじる</button>';
+  document.body.appendChild(box);
+
+  var bigImg = box.querySelector('img');
+  var caption = box.querySelector('.lightbox-caption');
+
+  function openBox(img) {
+    var fig = img.closest('.photo');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    bigImg.src = img.src;
+    bigImg.alt = img.alt;
+    caption.textContent = cap ? cap.textContent : '';
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBox() {
+    box.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.photo img').forEach(function (img) {
+    img.addEventListener('click', function () { openBox(img); });
+  });
+  box.addEventListener('click', closeBox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeBox();
+  });
+})();
+</script>
+  
 </body>
 </html>
