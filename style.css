@@ -418,6 +418,64 @@ a { color: inherit; }
   color: #fff;
 }
 
+/* ===== トップページへ戻るボタン（全ページ共通） ===== */
+.back {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 520px;          /* PCで広がりすぎないように */
+  margin-top: 40px;
+  padding: 20px 24px 20px 20px;
+  overflow: hidden;
+  background: var(--text);   /* 黒の面 */
+  color: #fff;
+  text-decoration: none;
+}
+/* 左の円（記号） */
+.back-mark {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+.back-en {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+.back-title {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+/* 右下の三角（記号） */
+.back::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-left: 40px solid transparent;
+  border-bottom: 40px solid var(--accent);
+}
+/* タップ・マウスを乗せたとき：ピンクと黒が入れ替わる */
+.back:hover,
+.back:active { background: var(--accent); }
+.back:hover .back-mark,
+.back:active .back-mark { background: #fff; color: var(--accent); }
+.back:hover .back-en,
+.back:active .back-en { color: #fff; }
+.back:hover::after,
+.back:active::after { border-bottom-color: var(--text); }
+
 /* ===== フッター ===== */
 .footer {
   background: var(--text);
