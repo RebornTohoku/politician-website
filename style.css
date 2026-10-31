@@ -67,10 +67,26 @@ a { color: inherit; }
   color: var(--sub);
 }
 .hero h1 {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: 0.08em;
+}
+/* 名前とロゴを横に並べる */
+.name-row {
+  display: flex;
+  flex-wrap: wrap;           /* 狭い画面では、ロゴが下に回り込む */
+  align-items: flex-end;     /* 文字の下端とロゴの下端をそろえる */
+  gap: 8px 20px;
+  margin-bottom: 12px;
+}
+.name-logo {
+  display: block;
+  flex: none;
+  width: 112px;              /* ロゴの大きさ。変えたいときはこの数字を変える */
+  height: auto;
+  margin-bottom: 8px;        /* 文字の底の線に合わせる微調整 */
+}
 }
 .title {
   margin: 0;
@@ -552,12 +568,18 @@ a { color: inherit; }
   font-size: 14px;
 }
 .footer p { margin: 0; }
-
+.footer-logo {
+  display: block;
+  width: 96px;
+  height: auto;
+  margin: 0 auto 12px;
+}
 /* ===== パソコン用（画面幅が800px以上） ===== */
 @media (min-width: 800px) {
   .header { padding: 14px 32px; }
   .hero { padding: 56px 32px; }
   .hero h1 { font-size: 72px; }
+  .name-logo { width: 170px; margin-bottom: 12px; }
   .quote { padding: 80px 20px; }
   .quote blockquote { font-size: 32px; }
   .section { padding: 72px 32px; }
