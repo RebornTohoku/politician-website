@@ -581,7 +581,7 @@ a { color: inherit; }
 
 /* ===== 背景の飾り（星・円・三角・四角をうすいピンクで散りばめる） ===== */
 body {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><g fill='%23e5007f' fill-opacity='0.12'><circle cx='60' cy='70' r='10'/><polygon points='260,94 264.1,104.3 275.2,105.1 266.7,112.2 269.4,122.9 260,117 250.6,122.9 253.3,112.2 244.8,105.1 255.9,104.3'/><polygon points='110,300 124,325 96,325'/><rect x='300' y='300' width='18' height='18' transform='rotate(20 309 309)'/><circle cx='200' cy='210' r='5'/><circle cx='350' cy='200' r='7'/></g></svg>");
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><g fill='%23e5007f' fill-opacity='0.10'><circle cx='60' cy='70' r='10'/><polygon points='260,94 264.1,104.3 275.2,105.1 266.7,112.2 269.4,122.9 260,117 250.6,122.9 253.3,112.2 244.8,105.1 255.9,104.3'/><polygon points='110,300 124,325 96,325'/><rect x='300' y='300' width='18' height='18' transform='rotate(20 309 309)'/><circle cx='200' cy='210' r='5'/><circle cx='350' cy='200' r='7'/></g></svg>");
   background-size: 500px 500px;   /* 模様1ブロックの大きさ。大きくすると、まばらになります */
   background-repeat: repeat;
 }
